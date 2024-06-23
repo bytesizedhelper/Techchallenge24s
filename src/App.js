@@ -6,12 +6,17 @@ function App() {
     <>
   <Header /> {/* Add the Header component here */}
 
+       
+      <Router>
       <Routes>
-        <Route path="/" element={<LandingPage />} />
-        {/* Other routes can be added hereasd asd  */}
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/about" element={<About />} />
+        {/* Add more routes as needed */}
       </Routes>
+    </Router>
     </>
   );
 }
 
 export default App;
+git pu origin main
