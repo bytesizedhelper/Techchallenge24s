@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import LandingPage from "../src/components/pages/LandingPage"; // Ensure correct path
+import LandingPage from "../src/components/LandingPage"; // Ensure correct path
 import Header from "./components/Header";
 function App() {
   return (

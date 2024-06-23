@@ -7,7 +7,7 @@ import {
   Checkbox,
   Button,
 } from "@mui/material";
-import "../../styles/LandingPage.scss";
+import "../styles/LandingPage.scss";
 
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 
