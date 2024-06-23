@@ -34,7 +34,7 @@ function LandingPage() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    alert("Car and auction created successfully!");
+   
     navigate("/myauctions"); // Redirect to myauctionspage
   };
 
@@ -76,7 +76,7 @@ function LandingPage() {
             color="primary"
             className="secondaryButton"
           >
-            Submit
+            Next 
           </Button>
         </div>
       </Box>
