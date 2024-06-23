@@ -6,14 +6,10 @@ function App() {
     <>
   <Header /> {/* Add the Header component here */}
 
-       
-      <Router>
       <Routes>
-      <Route path="/" element={<LandingPage />} />
-      <Route path="/about" element={<About />} />
-        {/* Add more routes as needed */}
+        <Route path="/" element={<LandingPage />} />
+        {/* Other routes can be added here */}
       </Routes>
-    </Router>
     </>
   );
 }
