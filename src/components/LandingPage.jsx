@@ -35,7 +35,7 @@ function LandingPage() {
   const handleSubmit = async (event) => {
     event.preventDefault();
    
-    navigate("/myauctions"); // Redirect to myauctionspage
+    navigate("/addyourjourney"); // Redirect to myauctionspage
   };
 
   return (

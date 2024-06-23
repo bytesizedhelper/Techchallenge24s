@@ -46,7 +46,7 @@ $margin-left: 40px;
 
 }
 .paragraph {
-  font-size: 20px;
+  font-size: 18px;
   color: black;
   display: flex;
   align-self: left;
@@ -54,5 +54,17 @@ $margin-left: 40px;
   font-weight: normal;
   width: 100%;
   padding: 0px 0px 24px 0px;
+
+}
+
+.paragraph1 {
+  font-size: 18px;
+  color: black;
+  display: flex;
+  align-self: left;
+  text-align: left;
+  font-weight: normal;
+  width: 100%;
+  padding: 20px 0px 10px 0px;
 
 }
