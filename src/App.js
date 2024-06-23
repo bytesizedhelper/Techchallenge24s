@@ -8,7 +8,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        {/* Other routes can be added here */}
+        {/* Other routes can be added hereasd asd  */}
       </Routes>
     </>
   );
