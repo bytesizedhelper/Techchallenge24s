@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/Techchallenge24s/static/css/main.151324b2.css",
-    "main.js": "/Techchallenge24s/static/js/main.1c6f9471.js",
+    "main.css": "/Techchallenge24s/static/css/main.b3b64f66.css",
+    "main.js": "/Techchallenge24s/static/js/main.b269e8b1.js",
     "static/media/logo.png": "/Techchallenge24s/static/media/logo.d9197b72e725b08e329f.png",
     "index.html": "/Techchallenge24s/index.html",
-    "main.151324b2.css.map": "/Techchallenge24s/static/css/main.151324b2.css.map",
-    "main.1c6f9471.js.map": "/Techchallenge24s/static/js/main.1c6f9471.js.map"
+    "main.b3b64f66.css.map": "/Techchallenge24s/static/css/main.b3b64f66.css.map",
+    "main.b269e8b1.js.map": "/Techchallenge24s/static/js/main.b269e8b1.js.map"
   },
   "entrypoints": [
-    "static/css/main.151324b2.css",
-    "static/js/main.1c6f9471.js"
+    "static/css/main.b3b64f66.css",
+    "static/js/main.b269e8b1.js"
   ]
 }
