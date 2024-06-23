@@ -8,6 +8,8 @@ function App() {
 
       <Routes>
         <Route path="/" element={<LandingPage />} />
+        <Route path="/Techchallenge24s" element={<LandingPage />} />
+
         {/* Other routes can be added here */}
       </Routes>
   </>
