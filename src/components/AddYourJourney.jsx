@@ -13,7 +13,7 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import "../styles/LandingPage.scss";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 
-function AuctionCar() {
+function AddYourJourney() {
     const [journeyName, setjourneyName] = useState("");
     const [postalCodeFrom, setPostalCodeFrom] = useState("");
     const [postalCodeTo, setPostalCodeTo] = useState("");
@@ -186,4 +186,4 @@ function AuctionCar() {
     );
 }
 
-export default AuctionCar;
+export default AddYourJourney;
