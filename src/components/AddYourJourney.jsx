@@ -79,7 +79,7 @@ function AddYourJourney() {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        navigate("/myauctions"); // Redirect to myauctionspage
+        navigate("/suggestedoptions"); // Redirect to myauctionspage
     };
 
     return (
