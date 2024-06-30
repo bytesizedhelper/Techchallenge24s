@@ -1,0 +1,79 @@
+/* src/components/MapComponent.css */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.form-container label {
+  margin-bottom: 10px;
+}
+
+.form-container input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.form-container button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-container button:hover {
+  background-color: #0056b3;
+}
+
+.map-container {
+  width: 100%;
+  height: 400px;
+}
+
+@media (min-width: 600px) {
+  .form-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .form-container label {
+    flex: 1;
+    margin-right: 10px;
+    margin-bottom: 0;
+  }
+
+  .form-container input {
+    width: auto;
+    flex: 2;
+    margin-right: 10px;
+  }
+
+  .form-container button {
+    flex: 1;
+    width: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .map-container {
+    height: 600px;
+  }
+}

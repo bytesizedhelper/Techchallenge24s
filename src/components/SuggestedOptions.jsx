@@ -34,7 +34,7 @@ function SuggestedOptions({ time, title, specs }) {
  const navigate = useNavigate(); // Initialize navigate 
 
   const handleClick = () => {
-    navigate("/myauctions");     
+    navigate("/mapview");     
     
     console.log(`Clicked on ${title}`);
   };
