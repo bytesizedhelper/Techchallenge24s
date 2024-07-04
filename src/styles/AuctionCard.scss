@@ -2,10 +2,10 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin: 20px 40px;
-  border: 1px solid #ddd;
+  margin: 20px 20px 30px 30px;
+ // border: 1px solid #ddd;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 4px 10px rgb(0 0 0 / 23%);
   overflow: hidden;
   background-color: #fff;
 
@@ -55,7 +55,7 @@
             top: 12px; /* Start from the first dot */
             bottom: 0;
             width: 2px;
-            background: #ddd;
+            background: rgb(211 189 250);
           }
 
           .spec-item {

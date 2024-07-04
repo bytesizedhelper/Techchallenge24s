@@ -3,7 +3,7 @@ import { Grid, Box, Typography } from "@mui/material";
 import "../styles/LandingPage.scss";
 import "../styles/AuctionCard.scss";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
-
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 // Dummy data
 const dummyData = [
   {
@@ -22,10 +22,41 @@ const dummyData = [
     title: "A Minor Barrier route",
     specs: [
       { name: "10:00 - 10:10 | S-Bahn", description: "Free Exit " },
-      { name: "10:15 - 10:25 | Bus", description: "Free Exit" },
+      { name: "10:15 - 10:25 | Bus", description: "Small way" },
       { name: "10:25 - 10:30 | Accessibile Routes", description: "Free Exit" } 
     ]
   },
+  {
+    id: 42,
+    time: "35 mins",
+    title: "No Barrier Route",
+    specs: [
+      { "name": "12:00 - 12:10 | U-Bahn", "description": "Free Exit" },
+      { "name": "12:10 - 12:15 | Tram", "description": "Accessible Routes" },
+      { "name": "12:15 - 12:30 | Bus", "description": "Free Exit" }
+    ]
+  },
+  {
+    id: 28,
+    time: "40 mins",
+    title: "A Minor Barrier Route",
+    specs: [
+      { "name": "07:30 - 07:40 | U-Bahn", "description": "Exit with escalators" },
+      { "name": "07:40 - 07:45 | Tram", "description": "Small way" },
+      { "name": "07:45 - 08:10 | S-Bahn", "description": "Free Exit" }
+    ]
+  },
+  {
+    id: 32,
+    time: "40 mins",
+    title: "A Free Barrier Route",
+    specs: [
+      { "name": "08:45 - 09:00 | S-Bahn", "description": "Free Exit" },
+      { "name": "09:00 - 09:25 | U-Bahn", "description": "Free Exit" }
+    ]
+  }
+
+
   // Add more dummy data as needed
 ];
 
@@ -78,6 +109,10 @@ function SuggestedOptions({ time, title, specs }) {
 function SuggestedOptionsList() {
   return (
     <div>
+         <div className="breadcrumb">
+         <a href="/AddYourJourney">
+        <ArrowBackIosIcon /> Go back to Add Your Journey</a>
+      </div>
       <div className="pageHeading">Suggested Options</div>
       {dummyData.map((option) => (
         <SuggestedOptions
@@ -88,6 +123,7 @@ function SuggestedOptionsList() {
         />
       ))}
     </div>
+    
   );
 }
 

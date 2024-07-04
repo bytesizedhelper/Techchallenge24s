@@ -4,8 +4,10 @@ import L from 'leaflet';
 import 'leaflet-routing-machine';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet-routing-machine/dist/leaflet-routing-machine.css';
-import { geocode } from '../utils/geocode';
 import "../styles/MapView.scss";
+
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+
 
 // Fix marker icon issues with Leaflet
 delete L.Icon.Default.prototype._getIconUrl;
@@ -15,11 +17,11 @@ L.Icon.Default.mergeOptions({
   shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
 });
 
-const Routing = ({ from, to }) => {
+const Routing = ({ from, waypoints, transportModes }) => {
   const map = useMap();
 
   useEffect(() => {
-    if (!map || !from || !to) return;
+    if (!map || !from || !waypoints || !transportModes) return;
 
     // Clear previous routing control if exists
     map.eachLayer(layer => {
@@ -28,99 +30,144 @@ const Routing = ({ from, to }) => {
       }
     });
 
-    // Create new routing control
+    // Define different icons based on transport mode with inline colors
+    const icons = {
+      train: L.icon({
+        iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+      }),
+      bus: L.icon({
+        iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+      }),
+      walk: L.icon({
+        iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+      })
+    };
+
+    // Create waypoints array for routing control
+    const waypointsArray = [L.latLng(from.lat, from.lng)];
+
+    waypoints.forEach((waypoint, index) => {
+      waypointsArray.push(L.latLng(waypoint.lat, waypoint.lng));
+      if (index < transportModes.length) {
+        // Add marker for each waypoint with corresponding transport mode icon and color
+        L.marker([waypoint.lat, waypoint.lng], { icon: icons[transportModes[index]] })
+          .addTo(map)
+          .bindPopup(waypoint.name);
+      }
+    });
+
+    // Create new routing control with custom icons and colors
     L.Routing.control({
-      waypoints: [
-        L.latLng(from[0], from[1]),
-        L.latLng(to[0], to[1]),
-      ],
+      waypoints: waypointsArray,
       routeWhileDragging: true,
+      lineOptions: {
+        styles: [
+          { color: '#0078FF', opacity: 0.8, weight: 6 }
+        ]
+      }
     }).addTo(map);
 
-  }, [map, from, to]);
+  }, [map, from, waypoints, transportModes]);
 
   return null;
 };
 
 const MapComponent = () => {
-  // Mock data for initial "From" and "To" addresses
-  const mockFromAddress = 'Alexanderplatz, Berlin, Germany';
-  const mockToAddress = 'Brandenburger Tor, Berlin, Germany';
+  // Mock data for starting point and waypoints
+  const mockStartingPoint = {
+    name: 'Munich Main Train Station',
+    lat: 48.1402,
+    lng: 11.5601
+  };
+
+  const mockWaypoints = [
+    {
+      name: 'Unterschleissheim Train Station',
+      lat: 48.2737,
+      lng: 11.5565
+    },
+    {
+      name: 'Garching-Hochbrück Train Station',
+      lat: 48.2503,
+      lng: 11.6479
+    },
+    {
+      name: 'TUM Garching',
+      lat: 48.2668,
+      lng: 11.6685
+    }
+  ];
+
+  const mockTransportModes = ['train', 'bus', 'train']; // Corresponding to each waypoint
 
   const [from, setFrom] = useState(null);
-  const [to, setTo] = useState(null);
-  const [fromInput, setFromInput] = useState(mockFromAddress);
-  const [toInput, setToInput] = useState(mockToAddress);
+  const [waypoints, setWaypoints] = useState([]);
+  const [transportModes, setTransportModes] = useState([]);
 
   useEffect(() => {
-    // Load initial coordinates based on mock data
+    // Load initial coordinates
     const loadInitialCoordinates = async () => {
       try {
-        const fromCoords = await geocode(mockFromAddress);
-        const toCoords = await geocode(mockToAddress);
-        setFrom(fromCoords);
-        setTo(toCoords);
+        // Simulated geocoding (replace with actual geocoding)
+        setFrom(mockStartingPoint);
+        setWaypoints(mockWaypoints);
+        setTransportModes(mockTransportModes);
       } catch (error) {
-        alert('Initial mock addresses could not be found.');
+        alert('Initial coordinates could not be loaded.');
       }
     };
 
     loadInitialCoordinates();
   }, []);
 
-  const handleFromChange = (event) => {
-    setFromInput(event.target.value);
-  };
-
-  const handleToChange = (event) => {
-    setToInput(event.target.value);
-  };
-
-  const updateRoute = async () => {
-    try {
-      const fromCoords = await geocode(fromInput);
-      const toCoords = await geocode(toInput);
-      setFrom(fromCoords);
-      setTo(toCoords);
-    } catch (error) {
-      alert('One of the addresses could not be found.');
-    }
-  };
-
   return (
+    
     <div className="container">
-      <div className="form-container">
-        <label>
-          From: 
-          <input type="text" value={fromInput} onChange={handleFromChange} placeholder="Enter start address" />
-        </label>
-        <label>
-          To: 
-          <input type="text" value={toInput} onChange={handleToChange} placeholder="Enter destination address" />
-        </label>
-        <button onClick={updateRoute}>Update Route</button>
+        <div className="breadcrumb">
+        <a href="/SuggestedOptions">
+        <ArrowBackIosIcon /> Go back to list of Options</a>
       </div>
       <div className="map-container">
-        <MapContainer center={[52.5200, 13.4050]} zoom={12} style={{ height: "100%", width: "100%" }}>
+        <MapContainer center={[48.137154, 11.586599]} zoom={12} style={{ height: "100%", width: "100%" }}>
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           />
           {from && (
-            <Marker position={from}>
-              <Popup>
-                Starting Point
-              </Popup>
+            <Marker position={[from.lat, from.lng]} icon={L.icon({
+              iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-orange.png',
+              iconSize: [25, 41],
+              iconAnchor: [12, 41],
+              popupAnchor: [1, -34],
+              shadowSize: [41, 41]
+            })}>
+              <Popup>{from.name}</Popup>
             </Marker>
           )}
-          {to && (
-            <Marker position={to}>
-              <Popup>
-                Destination
-              </Popup>
+          {waypoints.map((waypoint, index) => (
+            <Marker key={index} position={[waypoint.lat, waypoint.lng]} icon={L.icon({
+              iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-orange.png',
+              iconSize: [25, 41],
+              iconAnchor: [12, 41],
+              popupAnchor: [1, -34],
+              shadowSize: [41, 41]
+            })}>
+              <Popup>{waypoint.name}</Popup>
             </Marker>
-          )}
-          {from && to && <Routing from={from} to={to} />}
+          ))}
+          {from && waypoints.length > 0 && <Routing from={from} waypoints={waypoints} transportModes={transportModes} />}
         </MapContainer>
       </div>
     </div>

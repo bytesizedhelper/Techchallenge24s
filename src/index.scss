@@ -12,10 +12,10 @@ code {
     monospace;
 }
 
-$margin-top: 20px;
-$margin-right: 20px;
+$margin-top: 10px;
+$margin-right: 10px;
 $margin-bottom: 20px;
-$margin-left: 40px;
+$margin-left: 30px;
 
 .footerContainer {
   border-top: 1px solid black;
@@ -33,6 +33,34 @@ $margin-left: 40px;
   margin: $margin-top $margin-right 0 $margin-left;
 }
 
+ 
+
+.breadcrumb {
+  padding: 0 0 0 10px;
+  background-color: #ffffff;
+  //border-bottom: 1px solid #ccc;
+  display: flex; /* Use Flexbox for layout */
+  align-items: center; /* Align items vertically centered */
+  margin: 0 0 ;
+
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: #333;
+  display: flex; /* Use Flexbox for layout */
+  align-items: center; /* Align items vertically centered */
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb a .MuiSvgIcon-root {
+  margin-right: 0px; /* Adjust margin between icon and text */
+  margin-left: 20px; /* Adjust margin between icon and text */
+  font-size: small;
+}
 
 .sectionHeading {
   font-size: 30px;
@@ -42,7 +70,7 @@ $margin-left: 40px;
   text-align: left;
   font-weight: normal;
   width: 100%;
-  padding: 0px 0px 24px 0px;
+  padding: 0px 0px 14px 0px;
 
 }
 .paragraph {
