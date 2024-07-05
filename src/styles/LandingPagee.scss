@@ -1,0 +1,89 @@
+.landing-page {
+  padding: 20px;
+
+  .section {
+    margin-bottom: 40px;
+
+    h2 {
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    .journey-card {
+      position: relative;
+      height: 150px;
+      overflow: hidden;
+      border-radius: 8px;
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5); // Dark overlay
+        z-index: 1;
+      }
+
+      .content {
+        position: relative;
+        z-index: 2;
+        font-size: 18px;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .barrier-routes-table {
+    width: 100%;
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+
+      th, td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+    }
+  }
+
+  .special-card{
+    position: relative;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+     background-color: #ffffff;
+    color: #1129ffbb;
+    border:1px solid #1129ffbb;
+    &:hover{
+      background-color:#1129ffbb;
+      color: #ffffff;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      font-size: 18px;
+    //  font-weight: regular;
+    }
+  }
+}
