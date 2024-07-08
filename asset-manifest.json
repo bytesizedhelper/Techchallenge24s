@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Techchallenge24s/static/css/main.766d47d4.css",
+    "main.css": "/Techchallenge24s/static/css/main.fef76bc2.css",
     "main.js": "/Techchallenge24s/static/js/main.b1d7e46a.js",
     "static/media/Unterschleissheim.png": "/Techchallenge24s/static/media/Unterschleissheim.ec4951a9a0961bb04ecc.png",
     "static/media/Garching.jpg": "/Techchallenge24s/static/media/Garching.dcefaed0ab6be5c20fb3.jpg",
     "static/media/Munich.jpg": "/Techchallenge24s/static/media/Munich.e4cbc51b34f43273a758.jpg",
     "static/media/logo.png": "/Techchallenge24s/static/media/logo.d9197b72e725b08e329f.png",
     "index.html": "/Techchallenge24s/index.html",
-    "main.766d47d4.css.map": "/Techchallenge24s/static/css/main.766d47d4.css.map",
+    "main.fef76bc2.css.map": "/Techchallenge24s/static/css/main.fef76bc2.css.map",
     "main.b1d7e46a.js.map": "/Techchallenge24s/static/js/main.b1d7e46a.js.map"
   },
   "entrypoints": [
-    "static/css/main.766d47d4.css",
+    "static/css/main.fef76bc2.css",
     "static/js/main.b1d7e46a.js"
   ]
 }
