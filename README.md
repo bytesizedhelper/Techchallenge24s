@@ -1,4 +1,5 @@
 **Project Description**
+
 **1. Overview**
 This React application allows users to customize their travel journeys, receive notifications about barriers on their routes, and get suggestions for alternative routes based on their accessibility requirements. The application consists of five main pages: Add Your Journey, Landing Page, MapView, Suggested Options, and Barrier Routes Table.
 
@@ -53,8 +54,8 @@ npm run deploy
 This will create a production build and deploy it to GitHub Pages.
 
 **Example of Use**
-Open the application.
-Navigate to the "Add Your Journey" page to input your travel details.
-Check the "Landing Page" for notifications on any barriers and alternative routes.
-Use the "MapView Page" to see detailed route information.
-Visit the "Suggested Options Page" for recommendations on routes with minimal barriers.
+- Open the application.
+- Navigate to the "Add Your Journey" page to input your travel details.
+- Check the "Landing Page" for notifications on any barriers and alternative routes.
+- Use the "MapView Page" to see detailed route information.
+- Visit the "Suggested Options Page" for recommendations on routes with minimal barriers.
