@@ -28,32 +28,28 @@ This React application allows users to customize their travel journeys, receive 
 Prerequisites
 Node.js and npm installed on your machine.
 Steps
-Clone the Repository
+1. Clone the Repository
 ```sh
-Copy code
 git clone https://github.com/bytesizedhelper/Techchallenge24s.git
 cd Techchallenge24s
+```
 
-
-Install Dependencies
-
-sh
-Copy code
+2. Install Dependencies
+```sh
 npm install
-Run the Application
-
-sh
-Copy code
+```
+3. Run the Application
+```sh
 npm start
+```
 This will start the development server and you can view the application at http://localhost:3000.
 
-Deploy to GitHub Pages
+4. Deploy to GitHub Pages
 Assuming you have already set up GitHub Pages for the repository:
-
-sh
-Copy code
+```sh
 npm run build
 npm run deploy
+```
 This will create a production build and deploy it to GitHub Pages.
 
 **Example of Use**
