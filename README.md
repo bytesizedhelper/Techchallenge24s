@@ -19,8 +19,8 @@ This React application allows users to customize their travel journeys, receive 
 - Barrier Routes Table
 - Lists all routes with identified barriers and possible alternatives.
 
-**2. Software Modules/Frameworks Used
-**React: JavaScript library for building user interfaces.
+**2. Software Modules/Frameworks Used**
+- React: JavaScript library for building user interfaces.
 - React Router: Library for routing in React applications.
 - Mock Data: Used to simulate real-time data for barriers and routes.
 
@@ -29,11 +29,12 @@ Prerequisites
 Node.js and npm installed on your machine.
 Steps
 Clone the Repository
-
-sh
+```sh
 Copy code
 git clone https://github.com/bytesizedhelper/Techchallenge24s.git
 cd Techchallenge24s
+
+
 Install Dependencies
 
 sh
